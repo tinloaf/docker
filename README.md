@@ -130,6 +130,7 @@ services:
       - "80"
     volumes:
       - /opt/wallabag/images:/var/www/wallabag/web/assets/images
+      - /opt/wallabag/data:/var/www/wallabag/data
   db:
     image: mariadb
     environment:
@@ -140,7 +141,7 @@ services:
     image: redis:alpine
 ```
 
-Note that you must fill out the mail related variables according to your mail config.
+Note that you must fill out the mail related variables according to your mail config. Also, you must create the directories `/opt/wallabag/images` and `/opt/wallabag/data` on the host.
 
 ## nginx
 
